@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/01 17:00:41 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/09/02 12:57:50 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/09/02 16:53:35 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,5 +52,8 @@ prune:
 	@docker system prune -af | tail -n 1
 
 re: clean build
+
+hosts:
+	@sudo su -c "echo '127.0.0.1	ugdaniel.42.fr' >> /etc/hosts"
 
 .PHONY: all build start stop list status clean prune
