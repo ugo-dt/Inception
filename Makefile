@@ -14,8 +14,8 @@ all: build
 
 build:
 	@printf "Creating volumes... "
-	@mkdir -p ~/Desktop/data/database
-	@mkdir -p ~/Desktop/data/www	
+	@mkdir -p ~/data/database
+	@mkdir -p ~/data/www	
 	@printf "Done\n"
 	@docker-compose -f ./srcs/docker-compose.yml up -d --build
 
@@ -44,7 +44,7 @@ clean:
 	@printf "Done\nRemoving network...    "
 	@-docker network rm ${docker network ls -q} 2>/dev/null || true
 	@printf "Done\nRemoving data...       "
-	@sudo rm -rf ~/Desktop/data
+	@sudo rm -rf ~/data
 	@printf "Done\n"
 
 prune:
