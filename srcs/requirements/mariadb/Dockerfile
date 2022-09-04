@@ -6,11 +6,11 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/06 16:47:18 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/09/02 12:29:11 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/09/04 17:48:35 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM		alpine:3.14
+FROM		alpine:3.15
 
 RUN			apk update
 RUN			apk upgrade
