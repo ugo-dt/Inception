@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/01 17:00:41 by ugdaniel          #+#    #+#              #
-#    Updated: 2022/09/08 20:13:41 by ugdaniel         ###   ########.fr        #
+#    Updated: 2022/10/04 15:52:28 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,26 +14,25 @@ all: build
 
 build:
 	@printf "Creating volumes... "
-	@mkdir -p ~/data/database
-	@mkdir -p ~/data/www	
+	@mkdir -p /home/ugdaniel/data/database/ /home/ugdaniel/data/www/
 	@printf "Done\n"
-	@docker-compose -f ./srcs/docker-compose.yml up -d --build
+	@$(DOCKER_COMPOSE) -f ./srcs/docker-compose.yml up -d --build
 
 start:
-	@docker-compose -f ./srcs/docker-compose.yml start
+	@$(DOCKER_COMPOSE) -f ./srcs/docker-compose.yml start
 
 stop:
-	@docker-compose -f ./srcs/docker-compose.yml stop
+	@$(DOCKER_COMPOSE) -f ./srcs/docker-compose.yml stop
 
 list:
 	@docker ps -a
 
 status:
-	@docker-compose -f ./srcs/docker-compose.yml ps
+	@$(DOCKER_COMPOSE) -f ./srcs/docker-compose.yml ps
 
 clean:
 	@printf "Stopping containers... "
-	@docker-compose -f ./srcs/docker-compose.yml down 2>/dev/null || true
+	@$(DOCKER_COMPOSE) -f ./srcs/docker-compose.yml down 2>/dev/null || true
 	@-docker stop $$(docker ps -qa) 2>/dev/null || true
 	@printf "Done\nRemoving containers... "
 	@-docker rm $$(docker ps -qa) 2>/dev/null || true

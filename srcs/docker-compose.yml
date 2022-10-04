@@ -46,19 +46,19 @@ services:
     restart: unless-stopped
 
 volumes:
-  www:
+  www:	
     name: www
     driver: local
     driver_opts:
       type: none
-      device: ${VOLUME_WWW_PATH}
+      device: /home/ugdaniel/data/www/
       o: bind
   database:
     name: database
     driver: local
     driver_opts:
       type: none
-      device: ${VOLUME_DB_PATH}
+      device: /home/ugdaniel/data/database/
       o: bind
 
 networks:
