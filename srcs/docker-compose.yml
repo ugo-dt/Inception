@@ -51,14 +51,14 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/ugdaniel/data/www/
+      device: ${VOLUME_WWW_PATH}
       o: bind
   database:
     name: database
     driver: local
     driver_opts:
       type: none
-      device: /home/ugdaniel/data/database/
+      device: ${VOLUME_DB_PATH}
       o: bind
 
 networks:
