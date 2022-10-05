@@ -46,7 +46,7 @@ services:
     restart: unless-stopped
 
 volumes:
-  www:	
+  www:
     name: www
     driver: local
     driver_opts:
